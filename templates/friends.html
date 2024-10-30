@@ -1,0 +1,198 @@
+{% load static %}
+<style>
+  /* Изменить цвет текста на черноватый для всей панели навигации */
+  .navbar {
+    color: #333333; /* тёмно-серый текст на всей панели */
+  }
+
+  /* Изменить цвет всех ссылок на тёмно-серый */
+  .nav-link {
+    color: #4d4d4d; /* чуть светлее тёмно-серый текст для всех ссылок */
+  }
+
+  /* Изменить цвет активной ссылки на немного светлее */
+  .nav-item.active .nav-link {
+    color: #666666; /* серый для активной ссылки */
+  }
+
+  /* Изменить цвет при наведении на ссылки */
+  .nav-link:hover {
+    color: #999999; /* светло-серый текст при наведении */
+  }
+
+  /* Изменить цвет для названия сайта */
+  .navbar-brand {
+    color: #3a3a3a; /* тёмный оттенок для названия сайта */
+  }
+
+  /* Изменить цвет для ссылки "Оставить отзыв" */
+  .nav-item .nav-link[data-target="#feedbackModal"] {
+    color: #5a5a5a; /* темно-серый для ссылки "Оставить отзыв" */
+  }
+</style>
+
+{% include 'include/header.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Друзья</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2E8B57;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            padding: 0 20px;
+        }
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .blog-item {
+            flex: 0 1 30%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .blog-item:hover {
+            transform: translateY(-5px);
+        }
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-content {
+            padding: 20px;
+        }
+        .blog-title {
+            font-size: 1.5rem;
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+        .blog-description {
+            color: #555;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="ftco-section ftco-slant" id="section-services">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center ftco-animate">
+              <h2 class="text-uppercase ftco-uppercase">Мои друзья</h2>
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-7">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END row -->
+    <h1> мои друзья которые хорошие </h1> 
+          <style>
+            .blog-container {
+                display: flex; /* Используем Flexbox для выстраивания в ряд */
+                flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+                justify-content: space-between; /* Распределяет пространство между элементами */
+                gap: 10px; /* Отступ между элементами */
+            }
+        
+            .blog-item {
+                flex: 0 1 48%; /* Ширина каждого элемента примерно 48% от контейнера */
+                max-width: 48%; /* Максимальная ширина элемента */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального разделения */
+            }
+        
+            .blog-image {
+                width: 100%; /* Ширина 100% от контейнера */
+                height: 100px; /* Фиксированная высота для уменьшения размера изображения */
+                object-fit: cover; /* Обрезка изображения для заполнения контейнера */
+            }
+        </style>
+        
+        <style>
+          .blog-container {
+              display: flex; /* Используем Flexbox для выстраивания в ряд */
+              flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+              justify-content: space-between; /* Распределяет пространство между элементами */
+              gap: 10px; /* Отступ между элементами */
+          }
+      
+          .blog-item {
+              flex: 0 1 48%; /* Ширина каждого элемента примерно 48% от контейнера */
+              max-width: 48%; /* Максимальная ширина элемента */
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального разделения */
+          }
+      
+          .blog-image {
+              width: 100%; /* Ширина 100% от контейнера */
+              height: 400px; /* Увеличенная высота для более длинного изображения */
+              object-fit: cover; /* Обрезка изображения для заполнения контейнера */
+          }
+      </style>
+      
+      <style>
+        .blog-container {
+            display: flex; /* Используем Flexbox для выстраивания в ряд */
+            flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+            justify-content: space-between; /* Распределяет пространство между элементами */
+            gap: 10px; /* Отступ между элементами */
+        }
+    
+        .blog-item {
+            flex: 0 1 48%; /* Ширина каждого элемента примерно 48% от контейнера */
+            max-width: 48%; /* Максимальная ширина элемента */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального разделения */
+        }
+    
+        .blog-image {
+            width: 100%; /* Ширина 100% от контейнера */
+            height: 450px; /* Измененная высота для более длинного изображения */
+            object-fit: cover; /* Обрезка изображения для заполнения контейнера */
+        }
+    </style>
+    
+    <div class="blog-container">
+      {% for blog in blogs %}
+        <div class="blog-item">
+          <figure>
+            <img src="{{ blog.image.url }}" alt="майй бро" class="img-fluid blog-image">
+          </figure>
+          <div class="p-3">
+            <h3 class="h4">{{ blog.title }}</h3>
+            <p class="mb-4">{{ blog.description }}</p>
+            <ul class="list-unstyled ftco-list-check text-left">  
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+
+</body>
+</html>

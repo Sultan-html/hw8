@@ -1,7 +1,9 @@
 from django.urls import path
-from apps.settings.views import index,friends
+from apps.settings.views import index,friends,send_message
 
 urlpatterns = [
     path('',index,name='index'),
-    path('friends/',friends,name='friends')
+    path('photo/',friends,name='photo'),
+    path('send_message/', send_message, name='send_message'),
+
 ]

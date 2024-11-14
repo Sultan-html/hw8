@@ -1,9 +1,14 @@
-from django.shortcuts import render, redirect
-from apps.settings.models import Blog, Contact
-from apps.telegram.models import TelegramUser
+from django.shortcuts import render
+
+# Create your views here.
+from django.shortcuts import render
+from django.conf import settings
 from telebot import TeleBot, types
-TELEGRAM_TOKEN = "8021147059:AAGmYzPKSGv9ECsZuNRKUeUhj2LyRRd93QU"
-ADMIN_ID =  5420298695
+from .models import TelegramUser
+
+TELEGRAM_TOKEN = '7409456892:AAGNoJmrIyX6_QHmsjv42fQVPnSMJLuW_wQ'
+ADMIN_ID = '6564825140'
+
 
 bot = TeleBot(TELEGRAM_TOKEN, threaded=False)
 admin_id = ADMIN_ID
@@ -39,6 +44,8 @@ def send_mailing(message:types.Message):
 def get_text(message):
     bot.send_message(admin_id, message)
 
+
+
 def get_text_doctor(message, id):
     bot.send_message(id, message)
 
@@ -47,16 +54,3 @@ def get_text_doctor(message, id):
 def echo(message:types.Message):
     # bot.delete_message(message.chat.id, message.message_id)  
     bot.send_message(message.chat.id, "Я вас не понял")
-if __name__ == "__main__":
-    try:
-        bot.polling(none_stop=True)
-    except Exception as e:
-        print(f"Ошибка: {e}")
-
-def index(request):
-    blogs = Blog.objects.all()
-    return render(request, 'index.html', {'blogs': blogs})  # Передаем контекст в виде словаря
-
-def friends(request):
-    blogs = Blog.objects.all()
-    return render(request, 'friends.html', {'blogs': blogs})  # Передаем контекст в виде словаря

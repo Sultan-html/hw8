@@ -1,4 +1,5 @@
 {% load static %}
+
 <style>
   /* Изменить цвет текста на черноватый для всей панели навигации */
   .navbar {
@@ -36,7 +37,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои Друзья</title>
+    <title>Улара 🥰🥰🥰🥰</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -105,7 +106,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center ftco-animate">
-              <h2 class="text-uppercase ftco-uppercase">Мои друзья</h2>
+              <h2 class="text-uppercase ftco-uppercase">Фоточки😝😝😝</h2>
               <div class="row justify-content-center mb-5">
                 <div class="col-md-7">
                 </div>
@@ -113,7 +114,6 @@
         </div>
     </div>
     <!-- END row -->
-    <h1> мои друзья которые хорошие </h1> 
           <style>
             .blog-container {
                 display: flex; /* Используем Flexbox для выстраивания в ряд */
@@ -176,7 +176,7 @@
             object-fit: cover; /* Обрезка изображения для заполнения контейнера */
         }
     </style>
-    
+    <h2 class="text-uppercase ftco-uppercase">Фоточки😝😝😝</h2>
     <div class="blog-container">
       {% for blog in blogs %}
         <div class="blog-item">
@@ -184,15 +184,37 @@
             <img src="{{ blog.image.url }}" alt="майй бро" class="img-fluid blog-image">
           </figure>
           <div class="p-3">
-            <h3 class="h4">{{ blog.title }}</h3>
-            <p class="mb-4">{{ blog.description }}</p>
+            
             <ul class="list-unstyled ftco-list-check text-left">  
             </ul>
           </div>
         </div>
       {% endfor %}
     </div>
-    
-
+    <section class="ftco-section bg-white ftco-slant ftco-slant-dark" id="section-contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md pr-md-5 mb-5">
+            <form action="{% url 'send_message' %}" method="post">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="message" class="form-label"></label>
+                    <textarea name="message" id="message" class="form-control" rows="6" placeholder="Введите ваше сообщение" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </form>
+        </div>
+        
+          </div>
+          <div class="col-md" id="map">
+          </div>
+        </div>
+      </div>
+    </section>
+      <p>Вот и сказочке конец</p>
 </body>
 </html>
